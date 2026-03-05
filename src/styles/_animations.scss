@@ -1,0 +1,187 @@
+// ━━━ VEL FLOAT ━━━
+@keyframes velFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 0 28px #C9950A);
+    }
+
+    50% {
+        transform: translateY(-14px) scale(1.04);
+        filter: drop-shadow(0 0 55px #F0C040);
+    }
+}
+
+// ━━━ RING ROTATE ━━━
+@keyframes ringRotate {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+// ━━━ PARTICLE RISE ━━━
+@keyframes particleRise {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(0);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(0.3);
+    }
+}
+
+// ━━━ FADE UP ━━━
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ━━━ PULSE GOLD ━━━
+@keyframes pulseGold {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(201, 149, 10, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 70px rgba(240, 192, 64, 0.5);
+    }
+}
+
+// ━━━ SHIMMER LINE ━━━
+@keyframes shimmerLine {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+// ━━━ MARQUEE ━━━
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+// ━━━ DIVINE PULSE ━━━
+@keyframes divinePulse {
+
+    0%,
+    100% {
+        opacity: 0.65;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+// ━━━ STAR TWINKLE ━━━
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+// ━━━ LAMP FLICKER ━━━
+@keyframes lampFlicker {
+
+    0%,
+    100% {
+        opacity: 0.85;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    75% {
+        opacity: 1;
+    }
+}
+
+// ━━━ GRADIENT SHIFT ━━━
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+// ━━━ SHIMMER SKELETON ━━━
+@keyframes shimmerSkeleton {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+// ━━━ BORDER DANCE ━━━
+@keyframes borderDance {
+
+    0%,
+    100% {
+        border-color: rgba(201, 149, 10, 0.28);
+    }
+
+    50% {
+        border-color: rgba(240, 192, 64, 0.7);
+    }
+}
+
+// ━━━ IMAGE REVEAL ━━━
+@keyframes imageReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

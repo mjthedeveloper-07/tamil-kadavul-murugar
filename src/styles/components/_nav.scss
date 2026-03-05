@@ -1,0 +1,151 @@
+// ━━━ NAVIGATION ━━━
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 40px;
+    transition: all 0.4s ease;
+    border-bottom: 1px solid transparent;
+
+    &.scrolled {
+        @include glass-bg(0.97);
+        border-bottom-color: $border;
+        padding: 10px 40px;
+    }
+
+    @include mobile {
+        padding: 12px 20px;
+    }
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+
+    .om-symbol {
+        font-size: 1.6rem;
+        animation: velFloat 4s ease-in-out infinite;
+        filter: drop-shadow(0 0 10px rgba(201, 149, 10, 0.5));
+    }
+}
+
+.nav__logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nav__logo-en {
+    font-family: $font-display;
+    font-size: 1rem;
+    color: $gold;
+    text-shadow: 0 0 20px rgba(201, 149, 10, 0.5);
+    letter-spacing: 2px;
+
+    @include mobile {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+}
+
+.nav__logo-ta {
+    font-family: $font-tamil;
+    font-size: 0.65rem;
+    color: $text-muted;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    @include nav-mob {
+        display: none;
+
+        &.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            @include glass-bg(0.95);
+            padding: 24px;
+            gap: 20px;
+            border-bottom: 1px solid $border;
+        }
+    }
+}
+
+.nav__link {
+    font-family: $font-body;
+    font-size: 0.9rem;
+    color: $text-light;
+    position: relative;
+    padding: 4px 0;
+    transition: color $transition-base;
+    white-space: nowrap;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $gold;
+        transition: width $transition-base;
+    }
+
+    &:hover {
+        color: $gold;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.nav__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+
+    @include nav-mob {
+        display: flex;
+    }
+
+    span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: $gold;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    &.open {
+        span:first-child {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+        }
+
+        span:last-child {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    }
+}

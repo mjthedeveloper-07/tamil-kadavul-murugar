@@ -1,0 +1,241 @@
+// ━━━ CONTACT SECTION ━━━
+.contact {
+    padding: $section-pad;
+    background: linear-gradient(180deg, $dark 0%, $deep-red 50%, $dark 100%);
+
+    @include mobile {
+        padding: $section-pad-sm;
+    }
+}
+
+.contact__header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+// ━━━ CONTACT INFO ━━━
+.contact__info {
+    @include card-base;
+    padding: 32px;
+}
+
+.contact__info-title {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    color: $gold;
+    margin-bottom: 12px;
+}
+
+.contact__info-desc {
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: $text-muted;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.contact__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+
+    .emoji {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    a {
+        color: $gold;
+        transition: color 0.3s;
+
+        &:hover {
+            color: $gold-bright;
+        }
+    }
+}
+
+.contact__item-label {
+    font-family: $font-body;
+    font-size: 0.8rem;
+    color: $text-muted;
+    margin-bottom: 2px;
+}
+
+.contact__item-value {
+    font-family: $font-body;
+    font-size: 1rem;
+    color: $text-light;
+}
+
+// ━━━ FESTIVAL BOX ━━━
+.contact__festivals {
+    margin-top: 24px;
+    padding: 20px;
+    border: 1px solid $border;
+    border-radius: 10px;
+    background: rgba(123, 0, 0, 0.15);
+
+    h4 {
+        font-family: $font-display;
+        font-size: 0.9rem;
+        color: $gold;
+        margin-bottom: 14px;
+        letter-spacing: 2px;
+    }
+}
+
+.contact__festival {
+    font-family: $font-tamil;
+    font-size: 0.9rem;
+    color: $text-light;
+    padding: 5px 0;
+
+    .emoji {
+        margin-right: 8px;
+    }
+}
+
+// ━━━ QUICK NAV ━━━
+.contact__quick-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.contact__quick-pill {
+    padding: 6px 14px;
+    border: 1px solid $border;
+    border-radius: 100px;
+    font-family: $font-body;
+    font-size: 0.8rem;
+    color: $text-muted;
+    transition: all $transition-base;
+
+    &:hover {
+        border-color: $gold;
+        color: $gold;
+        background: rgba(201, 149, 10, 0.08);
+    }
+}
+
+// ━━━ CONTACT FORM ━━━
+.contact__form-wrap {
+    @include card-base;
+    padding: 32px;
+}
+
+.contact__form-title {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    color: $gold;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid $border;
+    border-radius: 8px;
+    background: rgba(46, 10, 0, 0.4);
+    color: $text-light;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &::placeholder {
+        color: $text-muted;
+    }
+
+    &:focus {
+        border-color: $gold;
+        box-shadow: 0 0 12px rgba(201, 149, 10, 0.15);
+    }
+}
+
+.contact__textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact__submit {
+    padding: 14px 28px;
+    border: 2px solid $gold;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(201, 149, 10, 0.15), rgba(240, 192, 64, 0.05));
+    color: $gold;
+    font-family: $font-display;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover {
+        background: rgba(201, 149, 10, 0.2);
+        box-shadow: 0 0 30px rgba(201, 149, 10, 0.25);
+        transform: translateY(-2px);
+    }
+}
+
+// ━━━ SUCCESS STATE ━━━
+.contact__success {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact__success-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 16px;
+    animation: divinePulse 2s ease-in-out infinite;
+}
+
+.contact__success-title {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    @include gradient-text;
+    margin-bottom: 12px;
+}
+
+.contact__success-text {
+    font-family: $font-body;
+    font-size: 1.1rem;
+    color: $text-light;
+    margin-bottom: 24px;
+}
+
+.contact__reset {
+    padding: 10px 24px;
+    border: 1px solid $border;
+    border-radius: 8px;
+    background: transparent;
+    color: $gold;
+    font-family: $font-body;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        border-color: $gold;
+        background: rgba(201, 149, 10, 0.1);
+    }
+}

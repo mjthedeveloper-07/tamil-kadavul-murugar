@@ -1,0 +1,28 @@
+// ━━━ TICKER STRIP ━━━
+.ticker {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, $crimson, $mid-red, $crimson);
+    padding: 14px 0;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+}
+
+.ticker__track {
+    display: flex;
+    gap: 44px;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+    will-change: transform;
+}
+
+.ticker__item {
+    flex-shrink: 0;
+    font-family: $font-tamil;
+    font-size: 0.95rem;
+    color: $gold-bright;
+
+    @include mobile {
+        font-size: 0.85rem;
+    }
+}

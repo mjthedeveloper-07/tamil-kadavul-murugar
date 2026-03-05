@@ -1,0 +1,256 @@
+// ━━━ AARUPADAI SECTION ━━━
+.aarupadai {
+    padding: $section-pad;
+    background: linear-gradient(180deg, $dark 0%, $deep-red 40%, $mid-red 60%, $dark 100%);
+
+    @include mobile {
+        padding: $section-pad-sm;
+    }
+}
+
+.aarupadai__header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.aarupadai__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: $max-width + 80px;
+    margin: 0 auto;
+}
+
+// ━━━ TEMPLE CARD ━━━
+.temple-card {
+    @include card-base;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        transform: translateY(-8px) scale(1.01);
+    }
+}
+
+// ━━━ TEMPLE CARD IMAGE ━━━
+.temple-card__image-wrap {
+    position: relative;
+    height: 245px;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40%;
+        background: linear-gradient(to top, rgba(13, 4, 0, 0.95), transparent);
+        pointer-events: none;
+    }
+}
+
+.temple-card__skeleton {
+    position: absolute;
+    inset: 0;
+    @include skeleton;
+    z-index: 1;
+}
+
+.temple-card__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease, transform 0.6s ease;
+    animation: imageReveal 0.6s ease forwards;
+
+    .temple-card:hover & {
+        transform: scale(1.05);
+    }
+}
+
+.temple-card__hover-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-family: $font-body;
+    font-size: 0.7rem;
+    color: $text-muted;
+    z-index: 5;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+
+    .temple-card:hover & {
+        opacity: 1;
+    }
+}
+
+// ━━━ CARD BADGES ━━━
+.temple-card__badge {
+    position: absolute;
+    z-index: 6;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: $font-display;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+
+    &--left {
+        top: 10px;
+        left: 10px;
+        background: $gold;
+        color: $dark;
+        font-weight: 700;
+    }
+
+    &--right {
+        top: 10px;
+        right: 10px;
+        background: rgba(13, 4, 0, 0.7);
+        color: $gold-bright;
+        border: 1px solid $border;
+        backdrop-filter: blur(8px);
+    }
+}
+
+// ━━━ CARD BODY ━━━
+.temple-card__body {
+    padding: 24px;
+}
+
+.temple-card__tamil-name {
+    font-family: $font-tamil;
+    font-size: 1.4rem;
+    color: $gold-bright;
+    margin-bottom: 4px;
+}
+
+.temple-card__english-name {
+    font-family: $font-display;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $text-muted;
+    margin-bottom: 16px;
+}
+
+.temple-card__location,
+.temple-card__deity {
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: $text-light;
+    margin-bottom: 8px;
+
+    .emoji {
+        margin-right: 6px;
+    }
+}
+
+.temple-card__desc {
+    font-family: $font-body;
+    font-size: 0.9rem;
+    color: $text-muted;
+    line-height: 1.6;
+    margin: 12px 0 16px;
+}
+
+.temple-card__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.temple-card__pill {
+    padding: 4px 12px;
+    border: 1px solid $border;
+    border-radius: 100px;
+    font-family: $font-body;
+    font-size: 0.78rem;
+    color: $text-muted;
+    transition: all $transition-base;
+
+    &:hover {
+        border-color: $gold;
+        color: $gold;
+        background: rgba(201, 149, 10, 0.08);
+    }
+}
+
+.temple-card__official {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid $border;
+    border-radius: 8px;
+    font-family: $font-body;
+    font-size: 0.85rem;
+    color: $gold;
+    transition: all $transition-base;
+
+    &:hover {
+        border-color: $gold;
+        background: rgba(201, 149, 10, 0.12);
+        transform: translateX(4px);
+    }
+}
+
+// ━━━ YATRA BANNER ━━━
+.aarupadai__yatra {
+    max-width: 900px;
+    margin: 60px auto 0;
+    text-align: center;
+    padding: 40px;
+    border: 2px solid $border;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(46, 10, 0, 0.5), rgba(13, 4, 0, 0.8));
+    animation: pulseGold 4s ease-in-out infinite;
+}
+
+.yatra__emoji {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+.yatra__label {
+    font-family: $font-display;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $text-muted;
+    margin-bottom: 20px;
+}
+
+.yatra__route {
+    font-family: $font-tamil;
+    font-size: 0.95rem;
+    color: $gold-bright;
+    line-height: 2;
+    margin-bottom: 24px;
+
+    .arrow {
+        color: $text-muted;
+        margin: 0 6px;
+    }
+}
+
+.yatra__badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.yatra__badge {
+    padding: 6px 16px;
+    border: 1px solid $border;
+    border-radius: 100px;
+    font-family: $font-body;
+    font-size: 0.8rem;
+    color: $gold;
+    transition: all $transition-base;
+
+    &:hover {
+        border-color: $gold;
+        background: rgba(201, 149, 10, 0.1);
+    }
+}

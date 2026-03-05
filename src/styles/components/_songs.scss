@@ -1,0 +1,81 @@
+// ━━━ SONGS ━━━
+.songs {
+    padding: $section-pad;
+
+    @include mobile {
+        padding: $section-pad-sm;
+    }
+
+    &__header {
+        max-width: $max-width;
+        margin: 0 auto 50px;
+        text-align: center;
+    }
+
+    &__grid {
+        max-width: $max-width;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 18px;
+    }
+}
+
+// ━━━ SONG CARD ━━━
+.song-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(46, 10, 0, 0.6), rgba(30, 6, 0, 0.8));
+    @include gold-border;
+    transition: all $transition-base;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: $border-hov;
+        box-shadow: 0 12px 40px rgba(201, 149, 10, 0.18);
+    }
+
+    &__icon {
+        font-size: 1.4rem;
+        flex-shrink: 0;
+    }
+
+    &__info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__name {
+        font-family: $font-body;
+        font-size: 0.95rem;
+        color: $text-light;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    &__download-btn {
+        flex-shrink: 0;
+        padding: 8px 20px;
+        border-radius: 8px;
+        border: 1px solid $gold;
+        background: linear-gradient(135deg, rgba(201, 149, 10, 0.15), rgba(240, 192, 64, 0.05));
+        color: $gold;
+        font-family: $font-display;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: all $transition-base;
+        white-space: nowrap;
+
+        &:hover {
+            background: rgba(201, 149, 10, 0.25);
+            box-shadow: 0 0 20px rgba(201, 149, 10, 0.2);
+            transform: translateY(-2px);
+        }
+    }
+}

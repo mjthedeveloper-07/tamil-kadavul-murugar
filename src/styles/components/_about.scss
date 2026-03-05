@@ -1,0 +1,146 @@
+// ━━━ ABOUT SECTION ━━━
+.about {
+    padding: $section-pad;
+    background: linear-gradient(180deg, $dark 0%, $deep-red 50%, $dark 100%);
+    position: relative;
+
+    @include mobile {
+        padding: $section-pad-sm;
+    }
+}
+
+.about__header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+// ━━━ PORTRAIT CARD ━━━
+.about__portrait {
+    position: relative;
+    border: 2px solid $border;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(46, 10, 0, 0.6), rgba(13, 4, 0, 0.9));
+    animation: pulseGold 4s ease-in-out infinite;
+
+    @include mobile {
+        max-width: 340px;
+        margin: 0 auto;
+    }
+}
+
+.about__portrait-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    animation: imageReveal 0.8s ease forwards;
+}
+
+// ━━━ TEXT CONTENT ━━━
+.about__heading {
+    font-family: $font-tamil;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    color: $gold-bright;
+    margin-bottom: 24px;
+
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.about__paragraph {
+    font-family: $font-body;
+    font-size: 1.1rem;
+    color: $text-light;
+    line-height: 1.8;
+    margin-bottom: 20px;
+
+    .emoji {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    .tamil {
+        font-family: $font-tamil;
+        color: $gold-bright;
+    }
+}
+
+.about__quote {
+    font-family: $font-body;
+    font-style: italic;
+    color: $gold-bright;
+    border-left: 3px solid $gold;
+    padding: 16px 24px;
+    margin: 28px 0;
+    background: rgba(201, 149, 10, 0.06);
+    border-radius: 0 8px 8px 0;
+    font-size: 1.1rem;
+}
+
+.about__names-label {
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: $text-muted;
+    margin-bottom: 16px;
+}
+
+// ━━━ NAME TAGS ━━━
+.about__names {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.about__name-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid $border;
+    border-radius: 8px;
+    background: rgba(46, 10, 0, 0.4);
+    cursor: default;
+    transition: all $transition-base;
+
+    &:hover {
+        background: rgba(46, 10, 0, 0.8);
+        border-color: $gold;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(201, 149, 10, 0.15);
+    }
+
+    .emoji {
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+}
+
+.about__name-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.about__name-tamil {
+    font-family: $font-tamil;
+    font-size: 0.9rem;
+    color: $text-light;
+}
+
+.about__name-en {
+    font-family: $font-body;
+    font-size: 0.7rem;
+    color: $text-muted;
+    font-style: italic;
+}

@@ -1,0 +1,314 @@
+// ━━━ AARUPADAI MAP ━━━
+.aarupadai-map {
+    padding: $section-pad;
+    background: linear-gradient(180deg, $dark 0%, $deep-red 50%, $dark 100%);
+
+    @include mobile {
+        padding: $section-pad-sm;
+    }
+}
+
+.aarupadai-map__header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    .section-title {
+        @include section-title;
+    }
+
+    .section-subtitle {
+        @include section-subtitle;
+        margin-bottom: 8px;
+    }
+
+    .map-hint {
+        font-family: $font-body;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: $text-muted;
+    }
+}
+
+// ━━━ MAP CONTAINER ━━━
+.aarupadai-map__container {
+    max-width: $max-width;
+    margin: 0 auto;
+    position: relative;
+}
+
+.aarupadai-map__frame {
+    position: relative;
+    border: 2px solid $border;
+    border-radius: 16px;
+    overflow: hidden;
+    @include ornate-corner(32px);
+
+    &::before,
+    &::after {
+        z-index: 10;
+        pointer-events: none;
+    }
+}
+
+.aarupadai-map__inner {
+    width: 100%;
+    height: 550px;
+
+    @include tablet {
+        height: 450px;
+    }
+
+    @include mobile {
+        height: 350px;
+    }
+}
+
+// ━━━ MAP FALLBACK ━━━
+.aarupadai-map__fallback {
+    width: 100%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: linear-gradient(145deg, rgba(46, 10, 0, 0.6), rgba(13, 4, 0, 0.9));
+    border: 2px solid $border;
+    border-radius: 16px;
+
+    @include tablet {
+        height: 450px;
+    }
+
+    @include mobile {
+        height: 350px;
+    }
+}
+
+.map-fallback__icon {
+    font-size: 3rem;
+}
+
+.map-fallback__title {
+    font-family: $font-display;
+    font-size: 1.2rem;
+    color: $gold;
+}
+
+.map-fallback__text {
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: $text-muted;
+    text-align: center;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+// ━━━ INFO WINDOW ━━━
+.map-info-window {
+    background: $dark;
+    border: 1px solid $border;
+    border-radius: 12px;
+    padding: 18px;
+    max-width: 280px;
+    color: $text-light;
+}
+
+.map-info__badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: $gold;
+    color: $dark;
+    border-radius: 4px;
+    font-family: $font-display;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.map-info__tamil {
+    font-family: $font-tamil;
+    font-size: 1.2rem;
+    color: $gold-bright;
+    margin-bottom: 4px;
+}
+
+.map-info__english {
+    font-family: $font-display;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $text-muted;
+    margin-bottom: 8px;
+}
+
+.map-info__order {
+    font-family: $font-body;
+    font-size: 0.85rem;
+    color: $gold;
+    margin-bottom: 6px;
+}
+
+.map-info__desc {
+    font-family: $font-body;
+    font-size: 0.85rem;
+    color: $text-light;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.map-info__buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.map-info__btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: $font-body;
+    font-size: 0.78rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+
+    &--primary {
+        background: $gold;
+        color: $dark;
+        border: none;
+        font-weight: 600;
+
+        &:hover {
+            background: $gold-bright;
+        }
+    }
+
+    &--secondary {
+        background: transparent;
+        color: $gold;
+        border: 1px solid $border;
+
+        &:hover {
+            border-color: $gold;
+            background: rgba(201, 149, 10, 0.1);
+        }
+    }
+}
+
+// ━━━ CUSTOM MAP MARKER ━━━
+.map-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.15);
+    }
+}
+
+.map-marker__disc {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: $gold;
+    border: 3px solid $gold-bright;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(201, 149, 10, 0.5);
+
+    span {
+        font-family: $font-display;
+        font-size: 0.75rem;
+        font-weight: 900;
+        color: $dark;
+    }
+}
+
+.map-marker__icon {
+    font-size: 1rem;
+    margin-top: 2px;
+}
+
+// ━━━ ROUTE STRIP ━━━
+.aarupadai-map__route {
+    margin-top: 28px;
+    padding: 24px 28px;
+    border: 1px solid $border;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(46, 10, 0, 0.5), rgba(13, 4, 0, 0.8));
+    text-align: center;
+}
+
+.route__path {
+    font-family: $font-tamil;
+    font-size: 0.9rem;
+    color: $gold-bright;
+    line-height: 2;
+    margin-bottom: 16px;
+
+    .route__num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: $gold;
+        color: $dark;
+        font-family: $font-display;
+        font-size: 0.6rem;
+        font-weight: 900;
+        margin-right: 4px;
+    }
+
+    .route__arrow {
+        color: $text-muted;
+        margin: 0 8px;
+        font-size: 0.8rem;
+    }
+}
+
+.route__full-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border: 1px solid $gold;
+    border-radius: 100px;
+    background: rgba(201, 149, 10, 0.08);
+    color: $gold;
+    font-family: $font-body;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all $transition-base;
+    margin-bottom: 18px;
+
+    &:hover {
+        background: rgba(201, 149, 10, 0.18);
+        box-shadow: 0 0 25px rgba(201, 149, 10, 0.2);
+    }
+}
+
+.route__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.route__stat {
+    font-family: $font-body;
+    font-size: 0.8rem;
+    color: $text-muted;
+    padding: 4px 14px;
+    border: 1px solid rgba(201, 149, 10, 0.15);
+    border-radius: 100px;
+}

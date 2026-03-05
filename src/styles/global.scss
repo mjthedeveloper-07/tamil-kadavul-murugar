@@ -1,0 +1,147 @@
+@import 'variables';
+@import 'animations';
+@import 'mixins';
+
+// ━━━ GLOBAL RESET ━━━
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background: $dark;
+    color: $text-light;
+    font-family: $font-body;
+    font-weight: 400;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// ━━━ SCROLLBAR ━━━
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: $deep-red;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient($gold, $gold-bright);
+    border-radius: 4px;
+}
+
+// ━━━ TYPOGRAPHY ━━━
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-display;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $gold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+blockquote {
+    font-family: $font-body;
+    font-style: italic;
+    color: $gold-bright;
+    border-left: 3px solid $gold;
+    padding: 12px 20px;
+    margin: 24px 0;
+    background: rgba(201, 149, 10, 0.06);
+    border-radius: 0 8px 8px 0;
+}
+
+::selection {
+    background: rgba(201, 149, 10, 0.3);
+    color: $gold-pale;
+}
+
+// ━━━ SCROLL REVEAL ━━━
+.reveal {
+    opacity: 0;
+    transform: translateY(38px);
+    transition: opacity 0.8s $ease-out-expo, transform 0.8s $ease-out-expo;
+    will-change: transform, opacity;
+
+    &.in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// ━━━ UTILITY ━━━
+.section-pad {
+    padding: $section-pad;
+
+    @include mobile {
+        padding: $section-pad-sm;
+    }
+}
+
+.section-container {
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+// ━━━ COMPONENT IMPORTS ━━━
+@import 'components/nav';
+@import 'components/hero';
+@import 'components/ticker';
+@import 'components/about';
+@import 'components/murugan-forms';
+@import 'components/slokas';
+@import 'components/aarupadai';
+@import 'components/map';
+@import 'components/gallery';
+@import 'components/songs';
+@import 'components/contact';
+@import 'components/footer';
+
+// ━━━ SECTION LABELS ━━━
+.section-subtitle-label {
+    font-family: $font-display;
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $text-muted;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.section-title {
+    @include section-title;
+}
+
+.section-subtitle {
+    @include section-subtitle;
+}

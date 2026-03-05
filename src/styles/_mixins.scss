@@ -1,0 +1,111 @@
+// ━━━ RESPONSIVE BREAKPOINTS ━━━
+@mixin mobile {
+    @media (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1100px) {
+        @content;
+    }
+}
+
+@mixin nav-mob {
+    @media (max-width: 780px) {
+        @content;
+    }
+}
+
+// ━━━ UTILITY MIXINS ━━━
+@mixin gold-border {
+    border: 1px solid $border;
+    transition: border-color 0.3s;
+
+    &:hover {
+        border-color: $border-hov;
+    }
+}
+
+@mixin card-hover {
+    transition: all $transition-base;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-card-hover;
+    }
+}
+
+@mixin skeleton {
+    background: linear-gradient(90deg,
+            rgba(201, 149, 10, 0.06) 25%,
+            rgba(201, 149, 10, 0.18) 50%,
+            rgba(201, 149, 10, 0.06) 75%);
+    background-size: 200% 100%;
+    animation: shimmerSkeleton 1.8s ease infinite;
+}
+
+@mixin gradient-text($from: #FFF3C0, $to: #C9950A) {
+    background: linear-gradient(135deg, $from, $to, $from);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+}
+
+@mixin glass-bg($opacity: 0.6) {
+    background: rgba(14, 4, 0, $opacity);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+@mixin card-base {
+    background: linear-gradient(145deg, rgba(46, 10, 0, 0.7), rgba(30, 6, 0, 0.9));
+    @include gold-border;
+    border-radius: 12px;
+    @include card-hover;
+}
+
+@mixin section-title {
+    font-family: $font-display;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    text-align: center;
+    margin-bottom: 16px;
+    @include gradient-text;
+}
+
+@mixin section-subtitle {
+    font-family: $font-body;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: $text-muted;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+}
+
+@mixin ornate-corner($size: 24px) {
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: $size;
+        height: $size;
+    }
+
+    &::before {
+        top: 10px;
+        left: 10px;
+        border-top: 2px solid $gold;
+        border-left: 2px solid $gold;
+    }
+
+    &::after {
+        bottom: 10px;
+        right: 10px;
+        border-bottom: 2px solid $gold;
+        border-right: 2px solid $gold;
+    }
+}

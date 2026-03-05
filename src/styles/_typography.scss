@@ -1,0 +1,51 @@
+// ━━━ TYPOGRAPHY SYSTEM ━━━
+
+body {
+    font-family: $font-body;
+    font-weight: 400;
+    color: $text-light;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-display;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $gold;
+}
+
+.font-tamil {
+    font-family: $font-tamil;
+}
+
+.font-display {
+    font-family: $font-display;
+}
+
+.gradient-text {
+    @include gradient-text;
+    animation: gradientShift 4s ease infinite;
+}
+
+blockquote {
+    font-family: $font-body;
+    font-style: italic;
+    color: $gold-bright;
+    border-left: 3px solid $gold;
+    padding: 12px 20px;
+    margin: 24px 0;
+    background: rgba(201, 149, 10, 0.06);
+    border-radius: 0 8px 8px 0;
+}
+
+::selection {
+    background: rgba(201, 149, 10, 0.3);
+    color: $gold-pale;
+}

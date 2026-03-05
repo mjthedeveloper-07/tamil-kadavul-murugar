@@ -1,0 +1,104 @@
+// ━━━ SLOKAS SECTION ━━━
+.slokas {
+    padding: $section-pad;
+    background: linear-gradient(180deg, $dark 0%, $deep-red 50%, $dark 100%);
+
+    @include mobile {
+        padding: $section-pad-sm;
+    }
+}
+
+.slokas__header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .section-title {
+        @include section-title;
+    }
+
+    .section-subtitle {
+        @include section-subtitle;
+    }
+}
+
+.slokas__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// ━━━ SLOKA CARD ━━━
+.sloka-card {
+    position: relative;
+    @include card-base;
+    padding: 32px 24px;
+    text-align: center;
+    @include ornate-corner(20px);
+
+    &:hover {
+        .sloka-card__tamil {
+            text-shadow: 0 0 30px rgba(201, 149, 10, 0.5);
+        }
+    }
+}
+
+.sloka-card__icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.sloka-card__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 2px solid $gold;
+    border-radius: 50%;
+    font-family: $font-display;
+    font-size: 0.75rem;
+    color: $gold;
+    margin-bottom: 16px;
+}
+
+.sloka-card__tamil {
+    font-family: $font-tamil;
+    font-size: 1.4rem;
+    color: $gold-bright;
+    margin-bottom: 4px;
+    transition: text-shadow 0.4s ease;
+    line-height: 1.6;
+}
+
+.sloka-card__tamil-sub {
+    font-family: $font-tamil;
+    font-size: 1.05rem;
+    color: $gold;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.sloka-card__transliteration {
+    font-family: $font-body;
+    font-style: italic;
+    font-size: 1rem;
+    color: $text-muted;
+    margin-bottom: 16px;
+}
+
+.sloka-card__divider {
+    width: 50px;
+    height: 2px;
+    background: $gold;
+    margin: 0 auto 16px;
+    opacity: 0.5;
+}
+
+.sloka-card__meaning {
+    font-family: $font-body;
+    font-size: 0.95rem;
+    color: $text-light;
+    line-height: 1.6;
+}
