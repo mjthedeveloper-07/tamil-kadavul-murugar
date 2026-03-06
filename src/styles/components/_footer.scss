@@ -108,3 +108,67 @@
         }
     }
 }
+
+// ━━━ CREATOR SECTION ━━━
+.footer__creator {
+    margin-top: 32px;
+    padding-top: 24px;
+    text-align: center;
+}
+
+.footer__creator-divider {
+    font-size: 0.85rem;
+    color: $gold;
+    opacity: 0.4;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+}
+
+.footer__creator-devotion {
+    font-family: $font-body;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    color: rgba(255, 232, 176, 0.5);
+    font-style: italic;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.footer__creator-label {
+    font-family: $font-display;
+    font-size: 0.7rem;
+    color: $text-muted;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer__creator-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $font-display;
+    font-size: 0.95rem;
+    @include gradient-text;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid rgba(201, 149, 10, 0.3);
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+
+    &:hover {
+        border-color: $gold;
+        box-shadow: 0 0 20px rgba(201, 149, 10, 0.2), 0 0 40px rgba(201, 149, 10, 0.1);
+        transform: translateY(-2px);
+    }
+}
+
+.footer__creator-github-icon {
+    color: $gold;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+
+    .footer__creator-link:hover & {
+        opacity: 1;
+    }
+}
